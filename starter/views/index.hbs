@@ -9,11 +9,12 @@
     <p>Welcome! 👋</p>
     <p>This web app consumes the <a href="http://localhost:1337/admin">local strapi API</a> to display any users defined in the strapi admin.</p>
     <div>
-      {{#if users}}
+      {{#if menuItems}}
         <h2>Users retrieved from local strapi API</h2>
-        {{#each users }}
-            <h3>{{ this.username }}</h3>
-            <p>{{this.email}}</p>
+        {{#each menuItems }}
+            <h3>{{ this.name }}</h3>
+            <p>{{ this.description }}</p>
+            <p>${{ this.price }}</p>
         {{/each}}
       {{else}}
         <h3>Local strapi API returned no users at this time.</h3>
